@@ -1,0 +1,48 @@
+<app-formulario-clientes></app-formulario-clientes>
+<br>
+
+<br>
+<app-lista-clientes></app-lista-clientes>
+
+<div class="container">
+    <div class="col">
+        <h3>{{title}} </h3>
+        
+    </div>
+    <hr>
+    <form class="form-row" action="">
+        <div class="form-group col-md-2">
+            <label for="name">nombre</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="nombre"[(ngModel)]="nombreInput" >{{nombreInput}}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="cuit">cuit</label>
+            <input type="text" name="cuit" id="cuit" class="form-control" placeholder="cuit"[(ngModel)]="cuitInput" >{{nombreInput}}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="date">nombre</label>
+            <input type="text" name="date" id="date" class="form-control" placeholder="date"[(ngModel)]="dateInput" >{{nombreInput}}
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="agregarPersona()">agregar
+
+            </button>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let persona of personas; let i = index">
+                {{i+1}}: {{persona.name}} {{persona.cuit}} {{persona.date}}
+            </div>
+        </div>
+    </div>
+</div>
+<app-planes></app-planes>
